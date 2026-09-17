@@ -23,7 +23,7 @@ scores = np.array([
 ```
 
 Think about:
-- What does each row represent?
+- What does each row represent? 
 - What does each column represent?
 - How do you know?
 The problem is that the array itself doesn't tell us.
