@@ -49,7 +49,7 @@ import pandas as pd
 
 The primary data structure we will use is called a DataFrame.
 
-##Part 2: Your first Dataframe
+## Part 2: Your first Dataframe
 
 Run the following code:
 
@@ -74,11 +74,11 @@ print(scores)
 
 #### Question 1
 How is this DataFrame similar to the NumPy array you created last class?
-* Your answer:
+* Your answer: It contains the same data in a similar nested list format. 
 
 #### Question 2
 How is it different?
-* Your answer:
+* Your answer: It also includes titles that specify what the data is. 
 
 ## Part 3 — Reading a CSV
 
@@ -89,10 +89,10 @@ data = pd.read_csv("pennData500.csv")
 ```
 
 ### Questions:
-- What is a DataFrame?
-- How is it similar to the 2D NumPy array you worked with?
-- What's different?
-- Why are column names useful?
+- What is a DataFrame? Nested lists of data that are labled. 
+- How is it similar to the 2D NumPy array you worked with? It contains the same data, just with lables. 
+- What's different? There are labels. 
+- Why are column names useful? They tell you what the data is. 
 
 ## Part 4: Looking at the DataFrame
 ```python
@@ -104,11 +104,11 @@ print(data.dtypes)
 ```
 
 ### Questions:
-- What does .head() do?
-- What does .tail() do?
-- What is the shape of this data?
--  What is the result of .columns?
-- What is the result of .dtype?
+- What does .head() do? It desplays the first 5 entries of data. 
+- What does .tail() do? It desplays the last 5 entries. 
+- What is the shape of this data? (499,6) 
+-  What is the result of .columns? It desplays the index/names of the colums of data. 
+- What is the result of .dtype? It desplays each index/column name and the data type it contains. 
 
 
 ## Describe
@@ -117,7 +117,7 @@ print(data.describe())
 ```
 
 ### Questions:
-- What does .describe() do?
+- What does .describe() do? It lists various information about the numerical data such as count, mean, min, max, etc. 
 
 ## Statistics
 ```python
@@ -131,12 +131,12 @@ Replace "COLUMN_NAME" with a column name from the data and run the code above
 
 
 ### Questions:
-- Which column did you choose?
-- What is the mean?
-- What is the median?
-- What is the minimum value?
-- What is the maximum value?
-- In your own words, what do these statistics tell you about the data?
+- Which column did you choose? Age 
+- What is the mean? 16.430861723446895 
+- What is the median? 16.0 
+- What is the minimum value? 14 
+- What is the maximum value? 19 
+- In your own words, what do these statistics tell you about the data? They tell me the average, middle, minimum, and maximum value of age for this data set. 
 
 ## Part 5: Selecting Data
 
@@ -159,10 +159,10 @@ print(data[["COLUMN_1", "COLUMN_2"]])
 Replace `"COLUMN_1"` and `"COLUMN_2"` with two columns from the dataset.
 
 ### Questions:
-- Which column did you select first?
-- What type of data does that column contain?
-- Which two columns did you select together?
-- Why might it be useful to look at only a few columns instead of the entire DataFrame?
+- Which column did you select first? Year. 
+- What type of data does that column contain? String. 
+- Which two columns did you select together? Name and Pathway. 
+- Why might it be useful to look at only a few columns instead of the entire DataFrame? It lets you filter just the data you need. 
 
 ## Part 6: Filtering Data
 
@@ -195,10 +195,11 @@ print(filtered_data)
 ```
 
 ### Questions:
-- Which column did you filter?
-- What condition did you use?
-- How many rows appear to meet your condition?
-- In your own words, explain what your filter asked Pandas to find.
+- Which column did you filter? Credits Completed. 
+- What condition did you use? >50. 
+- How many rows appear to meet your condition? 83. 
+- In your own words, explain what your filter asked Pandas to find. 
+    - My filter asked Pandas to find all rows where the student had completed more than 50 credits. 
 
 ## Part 7: Filtering Qualitative Data
 
@@ -243,10 +244,10 @@ print(filtered_data)
 ```
 
 ### Questions:
-- Which qualitative variable did you use?
-- What value did you search for?
-- What does the resulting DataFrame contain?
-- Why do we use `==` instead of `=` when checking whether two values are equal?
+- Which qualitative variable did you use? Pathway. 
+- What value did you search for? Computer Science. 
+- What does the resulting DataFrame contain? It contains all the rows where the student's pathway is Computer Science. 
+- Why do we use `==` instead of `=` when checking whether two values are equal? '==' checks if two values are equal, while '=' is used to set a value equal to another. 
 
 ## Part 8: Combining Selection and Filtering
 
@@ -277,15 +278,16 @@ Paste or write your completed code below:
 
 ```python
 
-# YOUR CODE HERE
-
+filtered_data = data[data["GPA"] > 4.0] 
+print(filtered_data[["Name", "Year"]]) 
+print(filtered_data.shape) 
 
 ```
 
 ### Questions:
-- What question were you trying to answer?
-- What did your code find?
-- Did the result match what you expected? Explain.
+- What question were you trying to answer? What's the name and year of everyone who had a GPA higher than a 4.0. 
+- What did your code find? The name and year of everyone with a GPA greater than a 4.0. 
+- Did the result match what you expected? Explain. Yes. There were 52 people with a GPA higher than 4.0 which matched my expectations for the number of people in this list that would have a GPA that high (out of 500 total). 
 
 ## Part 9: Data Detective
 
@@ -328,7 +330,12 @@ data[data["COLUMN_NAME"] == "VALUE"]
 
 How many **rows** and **columns** are in the Penn dataset?
 
-Write the Pandas command you used and your answer.
+Write the Pandas command you used and your answer. 
+
+```python 
+print(data.shape) 
+``` 
+There are 500 rows and 6 columns. 
 
 ### Challenge 2
 
@@ -341,7 +348,16 @@ Determine its:
 - Minimum  
 - Maximum  
 
-What does this information tell you about that variable?
+What does this information tell you about that variable? 
+
+```python 
+print(data["Age"]) 
+print(data["Age"].mean()) 
+print(data["Age"].median()) 
+print(data["Age"].min()) 
+print(data["Age"].max()) 
+``` 
+This information tells me that the average age is 16.430861723446895, the middle age when age is listed in ascending order is 16.0, the lowest age is 14, and the highest age is 19. 
 
 ### Challenge 3
 
@@ -359,19 +375,34 @@ Write:
 
 - Your question  
 - Your Python code  
-- What you discovered
+- What you discovered 
+
+Question: How many Sophomores are in this list? 
+```python 
+filtered_data = data[data["Year"] == "Sophomore"] 
+print(filtered_data.shape) 
+``` 
+I discovered that there are 109 Sophomores in this list. 
 
 ### Challenge 4
 
 Choose two variables that you think might be interesting to examine together.
 
-Display only those two columns.
+Display only those two columns. 
 
 ### Questions:
 - Which variables did you choose?
 - Why did you choose them?
 - Do you notice anything interesting?
-- What would you want to investigate further?
+- What would you want to investigate further? 
+
+```python 
+print(data[["Age", "Credits Completed"]])
+``` 
+- I chose Age and Credits Completed 
+- I chose these variables to see if there is a correlation between Age and the number of Credits Completed 
+- There doesn't seem to be a clear correlation from the portion of data displayed 
+- I would want to create some filters to try and narrow down the amount of data shown in order to try and distinguish some trends. 
 
 ## Part 10: Ask Your Own Question
 
@@ -385,7 +416,7 @@ Write one question about Penn that you believe this dataset can answer.
 
 ### My Question:
 
-Your question:
+Your question: Are there more Computer Science Pathway students than Business Pathway students? 
 
 ### My Code:
 
@@ -393,18 +424,21 @@ Write the Pandas code necessary to help answer your question.
 
 ```python
 
-# YOUR CODE HERE
-
+CS_filter = data[data["Pathway"] == "Computer Science"] 
+print(CS_filter.shape) 
+business_filter = data[data["Pathway"] == "Business"] 
+print(business_filter.shape) 
 
 ```
 
 ### My Result:
 
-What did your program find?
+What did your program find? It found that there are more business pathway students than CS pathway students (43<65). 
 
 ### What Does It Mean?
 
-Explain your result in a complete sentence.
+Explain your result in a complete sentence. 
+- There are more business pathway students than CS pathway students. 
 
 Do not simply write the number produced by Python.
 
