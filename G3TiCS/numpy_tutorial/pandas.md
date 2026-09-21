@@ -458,11 +458,13 @@ Write one interesting question about Penn that **cannot** be answered using this
 
 ### Question:
 
-What would you like to know?
+What would you like to know? 
+- What classes are the students taking? 
 
 ### Missing Data:
 
-What additional variable or data would need to be collected to answer your question?
+What additional variable or data would need to be collected to answer your question? 
+- The list of classes each student is taking. 
 
 ## Final Reflection
 
@@ -470,11 +472,13 @@ Answer each question in 1–3 complete sentences.
 
 ### 1. NumPy vs. Pandas
 
-What is one major difference you noticed between working with a NumPy array and working with a Pandas DataFrame?
+What is one major difference you noticed between working with a NumPy array and working with a Pandas DataFrame? 
+- A Pandas DataFrame was easier to get information from because the data was labeled. It was also nice to have the built in data analysis functions. 
 
 ### 2. DataFrames
 
-Why might a DataFrame be more useful than a basic 2D array when working with a large real-world dataset?
+Why might a DataFrame be more useful than a basic 2D array when working with a large real-world dataset? 
+- A DataFrame can contain more than one type of object in it, unlike a 2D array, so you can contain name and age, not just name, as well as label what data you have. 
 
 ### 3. Data Science
 
@@ -482,26 +486,27 @@ Return to today's Driving Question:
 
 **How can we use Pandas to organize and analyze real-world data?**
 
-Answer the question using something you did during today's activity as an example.
+Answer the question using something you did during today's activity as an example. 
+- You can use Pandas to find how many students are on a certain pathway or are in a certain year. There are many other applications as well. 
 
 ## Before You Are Finished
 
 Make sure you have:
 
-- [ ] Installed and imported Pandas  
-- [ ] Created your first DataFrame  
-- [ ] Loaded `pennData500.csv`  
-- [ ] Used `.head()` and `.tail()`  
-- [ ] Examined the shape, columns, and data types  
-- [ ] Used `.describe()`  
-- [ ] Calculated summary statistics  
-- [ ] Selected individual columns  
-- [ ] Filtered quantitative data  
-- [ ] Filtered qualitative data  
-- [ ] Completed the Data Detective challenges  
-- [ ] Created and answered your own data question  
-- [ ] Identified a question the dataset cannot answer  
-- [ ] Completed the final reflection  
+- [x] Installed and imported Pandas  
+- [x] Created your first DataFrame  
+- [x] Loaded `pennData500.csv`  
+- [x] Used `.head()` and `.tail()`  
+- [x] Examined the shape, columns, and data types  
+- [x] Used `.describe()`  
+- [x] Calculated summary statistics  
+- [x] Selected individual columns  
+- [x] Filtered quantitative data  
+- [x] Filtered qualitative data  
+- [x] Completed the Data Detective challenges  
+- [x] Created and answered your own data question  
+- [x] Identified a question the dataset cannot answer  
+- [x] Completed the final reflection  
 
 ## If You Finish Early
 
